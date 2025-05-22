@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mefa Emlak | İlanlar</title>
+    <link rel="stylesheet" href="Mefa.css">
+</head>
+<body>
+    <header>
+        <img src="detaylı.jpg" alt="logo" style="width:100px; height:100px; margin-top:20px; border-radius:50%;">
+        <h1>Mefa Emlak | İlanlar</h1>
+        <h3><a href="Web_Sitesi.html">Araç İlanları</a></h3>
+    </header>
+
+    <center>
+        <div id="search-container">
+            <input type="text" id="search-bar" placeholder="Daire arayın..." onkeyup="searchProperties()">
+        </div>
+    </center>
+
+    <section id="filter">
+        <div>
+            <label for="location">Konum:</label>
+            <select id="location" onchange="filterProperties()">
+                <option value="">Tüm Konumlar</option>
+                <option value="İstanbul">İstanbul</option>
+                <option value="Antalya,Kemer">Antalya</option>
+                <option value="Ankara">Ankara</option>
+                <option value="Mardin">Mardin</option>
+                <option value="İzmir">İzmir</option>
+                <option value="Bursa">Bursa</option>
+            </select>
+        </div>
+        <div>
+            <label for="price">Fiyat:</label>
+            <select id="price" onchange="filterProperties()">
+                <option value="">Tüm Fiyatlar</option>
+                <option value="1000000-10000000">1.000.000₺ - 10.000.000₺</option>
+                <option value="10000000-20000000">10.000.000₺ - 20.000.000₺</option>
+                <option value="20000000-50000000">20.000.000₺ - 50.000.000₺</option>
+            </select>
+        </div>
+    </section>
+
+    <section id="property-list"></section>
+
+    <footer>
+        <p>© 2025 MEFA Emlak - Tüm Hakları Saklıdır.</p>
+        <h4>Bize Ulaşın</h4>
+        <p><a href="mailto:mertp2742@gmail.com">E-Posta</a></p>
+    </footer>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <button id="modal-detail-btn">İncele</button>
+        </div>
+    </div>
+    <script src="Mefa.js"></script>
+</body>
+</html>

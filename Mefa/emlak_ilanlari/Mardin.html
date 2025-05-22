@@ -1,0 +1,118 @@
+<html>
+    <head><title>Mardin</title></head>
+        <link rel="stylesheet"href="Mefa2.css">
+        <style>
+            .resim-kutusu {
+                width: 100%;
+                max-width: 800px; /* Genişlik sınırlaması */
+                height: 400px;
+                margin: 20px auto;
+                border: 2px solid #ccc;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+
+            .resim-kutusu img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Resmi kutuya sığdırıyor */
+            }
+
+             .ilan_aciklama{
+                width:400px;
+                height:250px;
+                margin: 20px auto;
+                border:2px solid #ccc;
+                border-radius:12px;
+                overflow:hidden;
+                box-shadow:0 4px 8px rgba(0,0,0,0.2);
+
+                .ilan_aciklama h2 {
+                    margin-top: 0;
+                    color: #333;
+                }
+
+                .ilan_aciklama p {
+                    margin: 8px 0;
+                    color: #555;
+                }
+            }
+
+        </style>
+    <body>
+        <header>
+        <img src="detaylı.jpg" alt="logo" style="width:100px; height:100px; margin-top:20px; border-radius:50%;">
+        <h1>Mefa Emlak | İlanlar</h1>
+        <h3><a href="Web_Sitesi.html">Araç İlanları</a></h3>
+        <h3> <a href="emlak_ilanlari.html">Emlak İlanları</a></h3>
+        </header>
+            <div class="slider-container">
+        <div class="slider">
+            <img src="resimler/mardin.webp" class="slide active">
+            <img src="resimler/mardin_yatak.jpg" class="slide">
+            <img src="resimler/mardin_oturma.jpg" class="slide">
+
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+        </div>
+
+        <center>
+        <div class="ilan_aciklama">
+            <h2>Lüks Satılık Daire</h2>
+            <h3>Konum:Mardin,Kızıltepe</h3>
+            <h3>Fiyat:5000000₺</h3>
+            <p>Bu daire, modern tasarımı ve geniş iç mekanları ile dikkat çekiyor. Yüksek kaliteli malzemelerle inşa edilmiştir.</p>
+            <p>İçerisinde 3 yatak odası, geniş bir oturma odası ve modern bir mutfak bulunmaktadır.</p>
+            <p>Ayrıca, dairede özel bir balkon ve otopark alanı da mevcuttur.</p>
+            <p>Konumu itibarıyla alışveriş merkezlerine, okullara ve parklara yakın bir noktadadır.</p>
+        </div>
+<center>
+    <footer>
+        <p>© 2023 Mefa Emlak.Tüm Hakları Saklıdır.</p>
+        <p>Contact: <a href="mailto:mert.pat@ogr.gelisim.edu.tr">E-Posta</a></p>
+    </footer>
+<script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    const dots = document.querySelectorAll('.dot');
+
+    let currentIndex = 1;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            dots[i].classList.remove('active');
+        });
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            showSlide(currentIndex);
+        });
+    });
+</script>
+
+
+</body>
+</html>

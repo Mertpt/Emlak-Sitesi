@@ -1,0 +1,257 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9p0iynDP39sz7juBfwgzzAPeVXAux3PqCvw&s'); /* Arka plan görseli  */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(42, 42, 42, 0.8); /* Siyah header */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        #search-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #search-container input {
+            width: 60%;
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.8); /* Şeffaf arka plan */
+        }
+
+        #filter {
+            display: flex;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8); /* Şeffaf beyaz */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        #filter select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.8); /* Şeffaf arka plan */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #car-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .car-item {
+            background-color: rgba(255, 255, 255, 0.9); /* Şeffaf beyaz */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .car-item:hover {
+            transform: scale(1.05);
+        }
+
+        .car-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .car-item .content {
+            padding: 20px;
+        }
+
+        .car-item h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+            color: #2a2a2a;
+        }
+
+        .car-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .car-item .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e76f51;
+        }
+
+        footer {
+            background-color: rgba(42, 42, 42, 0.8); /* Şeffaf siyah */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Modal Stili */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .modal-content h3 {
+            margin: 20px 0;
+            font-size: 24px;
+        }
+        
+        .modal-content{
+    position: relative;           
+        }
+
+        .close{
+    
+    color:#333;                  
+    top:10px;                     
+    right:15px;
+}
+
+
+        .close {
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #f44336;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inspect-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #e76f51;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.inspect-btn:hover {
+    background-color: #d45d40;
+}
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.slider-btn {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.slider-btn:first-of-type {
+    left: 10px;
+}
+
+.slider-btn:last-of-type {
+    right: 10px;
+}
+.close {
+    color: #333;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.close:hover {
+    color: #f44336;
+}
